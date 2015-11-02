@@ -10,6 +10,7 @@ defmodule Russian do
 
   Возвращает строку, в которой все буквы русского алфавита заменены на похожую по звучанию латиницу
   """
+  @spec transliterate(String.t) :: String.t
   def transliterate(text) do
     Russian.Transliteration.transliterate(text)
   end
@@ -63,15 +64,12 @@ defmodule Russian do
     multi_keys_reg = Map.merge(@lower_multi, @upper_multi) |> Map.keys |> Enum.join("|")
     @chars_regex ~r/(#{multi_keys_reg}|\w|.)/um
 
-    def chars_regex do
-      @chars_regex
-    end
-
     @doc """
     Transliterate a string with russian characters
 
     Возвращает строку, в которой все буквы русского алфавита заменены на похожую по звучанию латиницу
     """
+    @spec transliterate(String.t) :: String.t
     def transliterate(str) do
       trans_chars Regex.scan(@chars_regex, str, capture: :first)
     end

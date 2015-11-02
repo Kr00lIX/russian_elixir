@@ -1,0 +1,3 @@
+%{"ex_spec": {:hex, :ex_spec, "1.0.0"},
+  "meck": {:hex, :meck, "0.8.3"}
+  }

@@ -8,7 +8,7 @@ Add the latest stable release to your `mix.exs` file:
 ```elixir
 defp deps do
   [
-    {:russian, "~> 0.0.1"}
+    {:russian, "~> 0.0.2"}
   ]
 end
 ```

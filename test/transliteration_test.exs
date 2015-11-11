@@ -1,10 +1,11 @@
 defmodule RussianTest.Transliteration do
   use Russian.TestCase
+  doctest Russian.Transliteration
 
   def t(text) do
     Russian.transliterate(text)
   end
-  
+
   it "should transliterate properly" do
     assert t("Это просто некий текст") == "Eto prosto nekiy tekst"
     assert t("щ") == "sch"

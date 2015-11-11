@@ -1,4 +1,17 @@
 defmodule Russian do
+  @moduledoc """
+    Russian transliteration
+
+    Транслитерация для букв русского алфавита
+
+    iex> Russian.transliterate("Строка на русском языке")
+    "Stroka na russkom yazyke"
+
+    Transliteration heavily based on rutils gem by Julian "julik" Tarkhanov and Co.
+    <http://rutils.rubyforge.org/>
+    Cleaned up and optimized.
+  """
+
   defmacro __using__(_opts) do
     quote do
       import Russian
@@ -6,9 +19,11 @@ defmodule Russian do
   end
 
   @doc """
-  Transliterate a string with russian characters
+    Transliterate a string with russian characters
+    Возвращает строку, в которой все буквы русского алфавита заменены на похожую по звучанию латиницу
 
-  Возвращает строку, в которой все буквы русского алфавита заменены на похожую по звучанию латиницу
+    iex> Russian.transliterate "Строка на русском языке"
+    "Stroka na russkom yazyke"
   """
   @spec transliterate(String.t) :: String.t
   def transliterate(text) do
@@ -16,14 +31,14 @@ defmodule Russian do
   end
 
   defmodule Transliteration do
-    @moduledoc """
-    Russian transliteration
+    @moduledoc ~S"""
+      Russian transliteration
 
-    Транслитерация для букв русского алфавита
+      Транслитерация для букв русского алфавита
 
-    Transliteration heavily based on rutils gem by Julian "julik" Tarkhanov and Co.
-    <http://rutils.rubyforge.org/>
-    Cleaned up and optimized.
+      Transliteration heavily based on rutils gem by Julian "julik" Tarkhanov and Co.
+      <http://rutils.rubyforge.org/>
+      Cleaned up and optimized.
     """
 
     @lower_single %{

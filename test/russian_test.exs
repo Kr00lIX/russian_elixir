@@ -1,5 +1,6 @@
 defmodule RussianTest do
   use Russian.TestCase
+  doctest Russian
 
   describe "use macro" do
     defmodule Foo  do

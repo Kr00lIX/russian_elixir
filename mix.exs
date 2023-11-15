@@ -4,12 +4,12 @@ defmodule Russian.Mixfile do
   def project do
     [
       app: :russian,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.0",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
-      deps: deps,
-      package: package,
+      deps: deps(),
+      package: package(),
       description: "Transliterate a string with russian characters"
    ]
   end
@@ -39,9 +39,8 @@ defmodule Russian.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:ex_spec, "~> 1.0", only: :test},
-      {:ex_doc, "~> 0.8", only: :dev},
-      {:earmark, ">= 0.0.0", only: :dev},
+      {:ex_doc, "~> 0.30.9", only: :dev},
+      {:earmark, "~> 1.4", only: :dev},
     ]
   end
 end
